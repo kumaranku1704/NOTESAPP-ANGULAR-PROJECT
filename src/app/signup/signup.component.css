@@ -1,0 +1,41 @@
+input.ng-invalid.ng-touched.ng-dirty {
+  border: 1px solid red;
+}
+
+.main {
+  margin: 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+.inputmain {
+  display: flex;
+  justify-content: center;
+}
+.genderradio {
+  text-align: center;
+  font-size: 20px;
+}
+.signIn {
+  display: flex;
+  justify-content: space-evenly;
+}
+.inputalert {
+  position: absolute;
+  display: none;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: normal;
+  line-height: inherit;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+}
+.acc{
+    font-size: 15px
+}
+.acc-2{
+    color: blue;
+}

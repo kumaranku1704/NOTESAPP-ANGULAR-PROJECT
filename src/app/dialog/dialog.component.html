@@ -1,0 +1,12 @@
+<div class="text-info popup" *ngIf="showPop">
+<h3>Delete Alert</h3>
+</div>
+<div class="mb-4">
+<span>Are you sure to delete this note? This won't be recovered once deleted</span>
+</div>
+<div class="btn"> 
+
+    <button class="btn btn-success" mat-dialog-close="false">Cancel</button>
+    <button class="btn btn-danger" mat-dialog-close="true">Delete</button>
+</div>
+

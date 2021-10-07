@@ -1,0 +1,15 @@
+<mat-progress-spinner
+  [mode]="mode"
+  *ngIf="loading$ | async"
+></mat-progress-spinner>
+
+<div class="bg-light mx-5 mt-5" >
+  <nav *ngIf="showContent" class="navbar navbar-light bg-info text-white">
+    <p *ngIf="username">
+      Welcome : <strong>{{ username }}</strong>
+    </p>
+
+    <button class="btn btn-info" (click)="logout()">Logout</button>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

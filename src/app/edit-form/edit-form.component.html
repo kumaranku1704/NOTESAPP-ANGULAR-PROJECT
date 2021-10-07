@@ -1,0 +1,96 @@
+<div class="main">
+  <div>
+    <div class="projectlogo">
+      <img src="./assets/project_logo.png" alt="" />
+    </div>
+
+    <div class="mx-4 px-2 title">
+      <h2 class="mt-2">Title:</h2>
+      <textarea
+        name=""
+        id=""
+        cols="40"
+        rows="1"
+        class="my-2 pt-2 px-2 ml-3"
+        [readonly]="isReadOnly"
+        [(ngModel)]="currentNote.title"
+      ></textarea>
+    </div>
+    <div class="mx-4 mt-3 text">
+      <h2 class="mt-1 mx-1">Text</h2>
+      <textarea
+        name=""
+        id=""
+        cols="50"
+        rows="8"
+        class="mx-3 mt-2"
+        [readonly]="isReadOnly"
+        [(ngModel)]="currentNote.Content"
+      ></textarea>
+      <div class="mr-4 count">
+        <h3>count:{{currentNote.Content.length }}</h3>
+      </div>
+    </div>
+    <div class="mx-4 mt-2 editimg">
+      <img
+        *ngIf="isReadOnly"
+        [src]="currentNote.imageUrl || './assets/img_no_img.jpeg'"
+        alt="raj"
+        class="img"
+      />
+      <img
+        *ngIf="!isReadOnly"
+        [src]="imageSrc || currentNote.imageUrl  || './assets/img_no_img.jpeg'"
+        alt="raj"
+        class="img"
+      />
+      <button
+        class="btn btn-info btn-lg mx-3 rounded-pill"
+        (click)="file.click()"
+        [disabled]="isReadOnly"
+      >
+        Change image
+        <input
+          type="file"
+          accept="image/*"
+          #file
+          (change)="readURL($event)"
+          
+        />
+      </button>
+    </div>
+    <div
+     *ngIf="!isReadOnly"
+      class="mt-3 mainbtn"
+    >
+      <button
+        class="btn btn-success btn-lg rounded-pill mb-4 mx-2"
+        (click)="saveNotes()"
+      >
+        Update Note
+      </button>
+      <button
+        class="btn btn-danger btn-lg rounded-pill mb-4 mx-2"
+        mat-raised-button
+        (click)="openDialog()"
+      >
+        Delete Note
+      </button>
+    </div>
+    <div
+     *ngIf="isReadOnly"
+      class="mt-3 editbtn"
+    >
+      <button
+        class="btn btn-primary btn-lg rounded-pill mb-4 mx-2"
+        (click)="enableEdit()"
+      >
+        Edit Note
+      </button>
+    </div>
+  </div>
+</div>
+<div *ngIf="showPop">
+  <app-dialog></app-dialog>
+</div> 
+  

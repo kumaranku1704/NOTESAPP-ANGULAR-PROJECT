@@ -1,0 +1,81 @@
+<div class="mt-5 mx-5">
+  <div class="container d-flex justify-content-center">
+    <div class="search-box">
+      <input
+        class="form-control"
+        type="text"
+        name="search"
+        [(ngModel)]="searchText"
+        autocomplete="off"
+        placeholder="&#61442;  Search "
+      />
+    </div>
+    <mat-form-field appearance="fill" class="mx-5">
+      <mat-label>Order</mat-label>
+      <mat-select
+        placeholder="Clients"
+        [(ngModel)]="selectedValue"
+        name="food"
+        (selectionChange)="reverseNotes()"
+      >
+        <mat-option *ngFor="let orderValue of order" [value]="orderValue">
+          {{ orderValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="list row mt-2 d-flex justify-content-center">
+    <div class="col-md-6">
+      <div class="d-flex justify-content-around">
+        <h4>Notes List</h4>
+        <div>
+          <button
+            class="btn btn-sm btn-danger mx-2"
+            *ngIf="showDeleteBtn"
+            (click)="deleteNotes()"
+          >
+            {{
+              selectedNote.length == 1 ? "Delete Note" : "Delete Selected Notes"
+            }}
+          </button>
+          <button
+            class="btn btn-sm btn-info mx-2"
+            [routerLink]="['/createform']"
+          >
+            add Note
+          </button>
+        </div>
+      </div>
+      <div class="mb-5 scrollbar">
+        <div
+          *ngFor="let note of notes | filter: searchText; let i = index"
+          [class.active]="i == currentIndex"
+        >
+          <div class="list-group-item mt-2 d-flex">
+            <div class="mx-2 newnote">
+              <input type="checkbox" (change)="selectNote(note.key)" />
+            </div>
+            <div (click)="setActiveNote(note)" class="mx-2">
+              <img
+                [src]="note.imageUrl || './assets/img_no_img.jpeg'"
+                alt=""
+                width="100px"
+                height="100px"
+              />
+            </div>
+            <div (click)="setActiveNote(note)" class="mx-5">
+              <p><strong> Title </strong> : {{ note.title }}</p>
+              <p>
+                <strong> Created Date </strong> :
+                {{ note.Date | date: "mediumDate" }}
+              </p>
+              <p class="content">
+                <strong> Content </strong> : {{ note.Content }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+.resend{
+    color: blue; font-size: 15px;
+}
+
+.content {
+    display: inline-block;
+   
+    vertical-align: top;
+  }
+  .card {
+    padding: 2rem;
+    box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+    border-radius: 4px;
+    background: white;
+    margin: 0 auto;
+  }
+  .a-o-i {
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 0;
+  }
+  .o-t-p {
+    display: block;
+    margin-top: 10px;
+    font-size: 19px;
+  }
+  .maincontent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .resend{
+    float: right; color:blue
+  }

@@ -1,0 +1,86 @@
+<div class="main">
+  <div>
+    <div class="projectimg">
+      <img src="./assets/project_logo.png" alt="" />
+    </div>
+    <div class="text-center">
+      <h1 class="mt-2 Signin" >Sign in</h1>
+      <img
+        src="./assets/google.jpg"
+        alt=""
+        class="mt-3 googleimg"
+        (click)="googleAuth()"
+      />
+      <h1 class="mb-4">OR</h1>
+    </div>
+    <div class="form">
+      <form
+        
+        [formGroup]="myLoginForm"
+        (ngSubmit)="submitForm()"
+      >
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            id="Email"
+            placeholder="email"
+            formControlName="email"
+          />
+          <small
+            class="text-danger"
+            *ngIf="
+              !myLoginForm.controls.email.valid &&
+              myLoginForm.controls.email.touched
+            "
+            >Please enter Valid email</small
+          >
+        </div>
+        <div class="form-group">
+          <input
+            type="password"
+            class="form-control"
+            id="Password1"
+            placeholder="Password"
+            formControlName="password"
+            
+          />
+       
+          <small
+            class="text-danger"
+            *ngIf="
+              !myLoginForm.controls.password.valid &&
+              myLoginForm.controls.password.touched
+            "
+          >
+            password is mandatory</small
+          >
+        </div>
+        <div class="form-group">
+          <button
+            type="submit"
+            class="btn btn-info btn-block"
+            [disabled]="!myLoginForm.valid"
+          >
+            Signin
+          </button>
+          <div class="mt-2 authentication">
+            <a class="btn"   [routerLink]="['/signinotp']">Sign in via OTP</a>
+            <a class="btn"   [routerLink]="['/forgotpassword']"
+              >Forgot password?</a
+            >
+          </div>
+          <div class="mt-2 signup">
+            <p >Don't have account?</p>
+            <a class="btn-1 mr-2" [routerLink]="['/signup']">Sign Up</a>
+          </div>
+        </div>
+       
+      </form>
+      
+    </div>
+    <div *ngIf="error_msg" class="alert alert-danger mt-3" role="alert">
+      <strong>An Error occured :</strong> {{ error_msg }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+.main{
+    display: flex;
+
+    min-height: 50vh;
+    min-width: 50vw;
+    align-items: center;
+    justify-content: center;
+}
+.projectimg{
+    display: flex;
+    justify-content: center;
+}
+.title{
+    display: flex; 
+    border: 2px solid cyan; 
+    height: 10vh;
+}
+.content{
+    height: 40vh; 
+    border: 2px solid cyan
+}
+content.h2{
+    height: 6vh; 
+    background-color: rgba(128, 128, 128, 0.842);
+}
+content.textarea{
+    padding: 10px;
+}
+.count{
+    display: flex; 
+    justify-content: flex-end;
+}
+.btnadd{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+}
+.img{
+    height: 10vh; width: 8vw
+}
+.save{
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgdisplay{
+    display: none;
+}

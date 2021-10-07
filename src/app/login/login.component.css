@@ -1,0 +1,40 @@
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+.projectimg {
+  display: flex;
+  justify-content: center;
+}
+.googleimg {
+  height: 4rem;
+  width: 10rem;
+}
+.form {
+  display: flex;
+  justify-content: center;
+}
+
+.authentication {
+  display: flex;
+  justify-content: space-between;
+}
+.signup {
+  display: flex;
+  justify-content: space-between;
+}
+.Signin{
+  color: blue;
+}
+.btn{
+  font-size: 15px;color: blue;
+}
+.btn-1{
+  color: blue;
+}

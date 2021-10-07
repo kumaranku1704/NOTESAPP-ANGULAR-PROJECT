@@ -1,0 +1,53 @@
+.main {
+  display: flex;
+  min-height: 50vh;
+  min-width: 50vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.projectlogo {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  display: flex;
+  border: 2px solid cyan;
+  height: 10vh;
+}
+.text {
+  height: 40vh;
+  border: 2px solid cyan;
+}
+.text.h2 {
+  height: 6vh;
+  background-color: rgba(128, 128, 128, 0.842);
+}
+.text.textarea {
+  padding: 10px;
+}
+.count{
+    display: flex; justify-content: flex-end
+}
+.editimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+}
+.img{
+    height: 10vh; width: 8vw;
+}
+.mainbtn{
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.editbtn{
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

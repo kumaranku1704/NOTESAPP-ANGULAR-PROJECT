@@ -1,0 +1,98 @@
+<div class="main bg-light mx-5 mt-5">
+  <div>
+    <ng-container *ngIf="!showConfirmSection">
+      <div class="maincontent">
+        <div class="content">
+          <div class="o-c">
+            <div>
+              <div class="card">
+                <h3>Enter Email and Mobile Number</h3>
+
+                <form [formGroup]="mysigninOtpForm">
+                  <div class="form-group">
+                    <input
+                      class="form-control"
+                      name="description"
+                      type="email"
+                      placeholder="Email"
+                      [(ngModel)]="userEmail"
+                      formControlName="email"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        !mysigninOtpForm.controls.email.valid &&
+                        mysigninOtpForm.controls.email.touched
+                      "
+                      >Please enter valid email</small
+                    >
+                  </div>
+                  <div class="form-group">
+                    <input
+                      class="form-control"
+                      name="description"
+                      maxlength="10"
+                      minlength="10"
+                      id="mobilenum"
+                      placeholder="Mobile Number"
+                      [(ngModel)]="Phonenumber"
+                      appDigitonly
+                      formControlName="mobileno"
+                    />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        !mysigninOtpForm.controls.mobileno.valid &&
+                        mysigninOtpForm.controls.mobileno.touched
+                      "
+                      >Please enter Mobie Number</small
+                    >
+                  </div>
+                  <button
+                    class="btn btn-block btn-info mt-2"
+                    (click)="generateOtp()"
+                    [disabled]="!mysigninOtpForm.valid"
+                  >
+                    Send Otp
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="showConfirmSection">
+      <div
+        class="maincontent"
+      >
+        <div class="content">
+          <div class="o-c">
+            <div>
+              <div class="card">
+                <h3>Enter verification code</h3>
+                <ng-otp-input
+                  #ngOtpInput
+                  (onInputChange)="onOtpChange($event)"
+                  *ngIf="showOtpComponent"
+                  [config]="config"
+                ></ng-otp-input>
+                <span *ngIf="otp" class="o-t-p">Entered otp :-{{ otp }}</span>
+              </div>
+            </div>
+          </div>
+          <button
+            class="btn btn-block btn-info mt-2"
+            [disabled]="showSubmitBtn"
+            (click)="SubmitOtp()"
+          >
+            Submit Otp
+          </button>
+          <h4 class="resend">
+            <strong (click)="generateOtp()"> Resend OTP</strong>
+          </h4>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
